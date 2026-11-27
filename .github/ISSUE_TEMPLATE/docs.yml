@@ -1,0 +1,24 @@
+name: Documentação / Docs
+description: Documento que falta, está errado ou desatualizado / A document that is missing, wrong or out of date
+type: Docs
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: O que falta ou está errado / What is missing or wrong
+      description: Arquivo ou seção, e o que precisa mudar / File or section, and what needs to change
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Fonte da verdade / Source of truth
+      description: O código, a decisão ou o documento que o texto deve refletir / The code, decision or document the text must reflect
+  - type: textarea
+    id: done
+    attributes:
+      label: Pronto quando / Done when
+      value: |
+        - [ ]
+    validations:
+      required: true

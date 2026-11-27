@@ -1,0 +1,7 @@
+[
+  { "name": "contract",              "color": "0e8a16", "description": "Mudança ou divergência de contrato / Contract change" },
+  { "name": "status:needs-info",     "color": "e4e669", "description": "Quem trata precisa de resposta de quem pediu / Needs info" },
+  { "name": "status:needs-decision", "color": "fbca04", "description": "Depende de decisão do mantenedor / Needs a decision" },
+  { "name": "status:blocked",        "color": "5c5c5c", "description": "Depende de outra issue / Blocked by another issue" },
+  { "name": "needs-verification",    "color": "c2e0c6", "description": "Resolvida; aguardando quem pediu / Resolved, awaiting the requester" }
+]

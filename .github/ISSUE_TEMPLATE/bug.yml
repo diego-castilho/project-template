@@ -1,0 +1,50 @@
+name: Bug
+description: Algo não funciona como deveria / Something does not work as it should
+type: Bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Nunca cole token, senha, `.env`, IP real ou dado pessoal real. Descreva o formato.
+        Never paste tokens, passwords, `.env`, real IPs or real personal data. Describe the format.
+  - type: textarea
+    id: what
+    attributes:
+      label: O que aconteceu / What happened
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: O que era esperado / What was expected
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Como reproduzir / How to reproduce
+      placeholder: "1. …\n2. …"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versão ou commit / Version or commit
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Prioridade / Priority
+      description: Sugestão; quem mantém o projeto define o campo Priority / A suggestion; the maintainer sets the Priority field
+      options:
+        - "Urgent — bloqueante ou risco ao usuário / blocking or user at risk"
+        - "High — quebrado, sem risco / broken, no risk"
+        - "Low — pode esperar / can wait"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs (higienizados / sanitized)
+      render: text

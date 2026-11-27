@@ -1,0 +1,36 @@
+{
+  "standardsVersion": "0.3.1",
+  "project": {
+    "name": "project-template",
+    "repo": "diego-castilho/project-template"
+  },
+  "commitScopes": [
+    "core",
+    "docs",
+    "changelog",
+    "ci",
+    "deps",
+    "release"
+  ],
+  "verify": "",
+  "verifyRunsIn": "ci",
+  "release": {
+    "versionFiles": [],
+    "preBumpCommands": [],
+    "gates": []
+  },
+  "production": {
+    "deployDoc": "",
+    "paths": [],
+    "containers": []
+  },
+  "xrepo": {
+    "enabled": false,
+    "self": "project-template",
+    "repos": []
+  },
+  "docs": {
+    "auditDir": "docs/audits"
+  },
+  "sensitive": []
+}

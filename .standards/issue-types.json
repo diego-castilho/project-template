@@ -1,0 +1,30 @@
+{
+  "types": [
+    { "name": "Bug",      "color": "red",    "description": "Defeito a corrigir / Defect to fix" },
+    { "name": "Feature",  "color": "blue",   "description": "Funcionalidade nova / New feature" },
+    { "name": "Task",     "color": "yellow", "description": "Manutenção, CI, build, dependências / Maintenance" },
+    { "name": "Docs",     "color": "green",  "description": "Documentação / Documentation" },
+    { "name": "Question", "color": "purple", "description": "Precisa de resposta, não de código / Needs an answer, not code" }
+  ],
+  "priority": {
+    "name": "Priority",
+    "description": "Prioridade / Priority",
+    "visibility": "restricted",
+    "options": [
+      { "name": "Urgent", "color": "red",    "description": "Bloqueante ou risco ao usuário / Blocking or user at risk" },
+      { "name": "High",   "color": "orange", "description": "Quebrado, sem risco / Broken, no risk" },
+      { "name": "Medium", "color": "yellow", "description": "Melhoria relevante / Worthwhile improvement" },
+      { "name": "Low",    "color": "gray",   "description": "Pode esperar / Can wait" }
+    ]
+  },
+  "fromLabels": {
+    "type": {
+      "type:bug": "Bug", "bug": "Bug",
+      "type:feature": "Feature", "enhancement": "Feature",
+      "type:docs": "Docs", "documentation": "Docs",
+      "type:question": "Question", "question": "Question",
+      "type:chore": "Task", "type:contract": "Task", "type:api-contract": "Task"
+    },
+    "priority": { "priority:p0": "Urgent", "priority:p1": "High", "priority:p2": "Low" }
+  }
+}

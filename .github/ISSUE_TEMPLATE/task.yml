@@ -1,0 +1,24 @@
+name: Tarefa / Task
+description: Manutenção, CI, dependências, dívida técnica ou decisão pendente / Maintenance, CI, dependencies, tech debt or a pending decision
+type: Task
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto / Context
+      description: Por que isso precisa ser feito / Why this needs doing
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Pronto quando / Done when
+      value: |
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: refs
+    attributes:
+      label: Referências / References
+      description: Auditoria, PR, ADR, achado / Audit, PR, ADR, finding

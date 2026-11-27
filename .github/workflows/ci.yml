@@ -1,0 +1,47 @@
+# ============================================================================
+# CI — the project's own checks (build, tests, lint)
+# ============================================================================
+# Owned by the project: the standards sync never touches this file. It runs
+# the `verify` command from .standards.json, the same one run locally before
+# a PR. Add the setup the project needs (setup-node, setup-python, services)
+# before the verify step. With verifyRunsIn: "local" (a build that needs
+# Xcode on a Mac, say) the step only says so: the PR's Verification section
+# carries the local result.
+# ============================================================================
+
+name: CI
+
+on:
+  pull_request:
+    branches: [develop, main]
+  push:
+    branches: [develop, main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - name: verify (.standards.json)
+        run: |
+          if [ "$(jq -r '.verifyRunsIn // "ci"' .standards.json)" = "local" ]; then
+            echo "::notice::verifyRunsIn = local: o verify roda na máquina de desenvolvimento e o resultado vai na Verificação do PR."
+            exit 0
+          fi
+          cmd="$(jq -r '.verify // ""' .standards.json)"
+          if [ -z "$cmd" ]; then
+            echo "::warning::.standards.json sem 'verify': nada a rodar."
+            exit 0
+          fi
+          echo "+ $cmd"
+          bash -c "$cmd"

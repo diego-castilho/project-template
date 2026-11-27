@@ -1,0 +1,41 @@
+name: Funcionalidade / Feature
+description: Algo novo ou uma mudança de comportamento / Something new or a behavior change
+type: Feature
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema / Problem
+      description: O que falta hoje e para quem / What is missing today, and for whom
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposta / Proposal
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceite / Acceptance criteria
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Fora de escopo / Out of scope
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Prioridade / Priority
+      description: Sugestão; quem mantém o projeto define o campo Priority / A suggestion; the maintainer sets the Priority field
+      options:
+        - "High — necessário em breve / needed soon"
+        - "Medium — melhoria relevante / worthwhile improvement"
+        - "Low — pode esperar / can wait"
+    validations:
+      required: true

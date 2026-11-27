@@ -1,0 +1,29 @@
+{
+  "standardsVersion": "__STANDARDS_VERSION__",
+  "project": {
+    "name": "__PROJECT_NAME__",
+    "repo": "__PROJECT_REPO__"
+  },
+  "commitScopes": ["core", "docs", "changelog", "ci", "deps", "release"],
+  "verify": "",
+  "verifyRunsIn": "ci",
+  "release": {
+    "versionFiles": [],
+    "preBumpCommands": [],
+    "gates": []
+  },
+  "production": {
+    "deployDoc": "",
+    "paths": [],
+    "containers": []
+  },
+  "xrepo": {
+    "enabled": false,
+    "self": "__PROJECT_SLUG__",
+    "repos": []
+  },
+  "docs": {
+    "auditDir": "docs/audits"
+  },
+  "sensitive": []
+}

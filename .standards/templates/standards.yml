@@ -1,0 +1,39 @@
+# ============================================================================
+# dev-standards — the "Auto" rules of CONTRIBUTING.md on every PR
+# ============================================================================
+# Owned by the standard: the standards sync rewrites this file with the
+# version the project follows. Project checks (build, tests, lint) live in
+# ci.yml, which belongs to the project.
+#
+# The checks themselves are the dev-standards/check action, at the version
+# tag below: branch name and base, PR title, commit subjects, EN/PT section
+# parity, private addresses in Markdown and the Actions lockfile. Locally,
+# .standards/check.sh runs the same.
+# ============================================================================
+
+name: Standards
+
+on:
+  pull_request:
+    branches: [develop, main]
+    types: [opened, edited, synchronize, reopened]
+
+concurrency:
+  group: standards-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  standards:
+    name: padrão · standards
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - uses: diego-castilho/dev-standards/check@v__STANDARDS_VERSION__

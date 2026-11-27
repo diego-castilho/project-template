@@ -1,0 +1,21 @@
+name: Pergunta / Question
+description: Precisa de resposta ou de decisão, não de código / Needs an answer or a decision, not code
+type: Question
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Pergunta / Question
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto / Context
+      description: O que já se sabe e por que a resposta importa / What is known, and why the answer matters
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Opções consideradas / Options considered
